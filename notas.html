@@ -1,63 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CPF Ingeniería - Notas</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        .user-info {
+            text-align: right;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #006400;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        section {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+        }
+        .notas-materia {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>
-            <img src="ingenieria-icon.png" alt="Ingeniería Icono">
-            INGENIERÍA
-        </h1>
+        <h1><img src="ingenieria-icon.png" alt="Ingeniería Icono"> INGENIERÍA</h1>
         <div class="user-info">
-            <span id="user-name" onclick="window.location.href='datos.html'">Efrain Davis Villegas Arrazola</span>
-            <button id="back-to-datos-button"><img src="salir-icon.png" alt="Salir Icono"> Regresar</button>
+            <span onclick="window.location.href='datos.html'">Efrain Davis Villegas Arrazola</span><br>
+            <button onclick="window.location.href='datos.html'"><img src="salir-icon.png" alt="Salir Icono"> Regresar</button>
         </div>
     </header>
-    <section id="notas-screen">
-        <h2>NOTAS C.P.F. I/2025</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Notas</th>
-                    <th>MAT</th>
-                    <th>FIS</th>
-                    <th>QMC</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1er Parcial</td>
-                    <td>62</td>
-                    <td>82</td>
-                    <td>57</td>
-                </tr>
-                <tr>
-                    <td>2do Parcial</td>
-                    <td>34</td>
-                    <td>90</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Nota del Ingeniero</td>
-                    <td>45</td>
-                    <td>80</td>
-                    <td>88</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td><strong>Nota Final</strong></td>
-                    <td><strong>48</strong></td>
-                    <td><strong>86</strong></td>
-                    <td><strong>74</strong></td>
-                </tr>
-            </tfoot>
-        </table>
+
+    <section id="menu-materias">
+        <h2>Ver notas de:</h2>
+        <button onclick="mostrarMateria('matematicas')">Matemáticas</button>
+        <button onclick="mostrarMateria('fisica')">Física</button>
+        <button onclick="mostrarMateria('quimica')">Química</button>
     </section>
-    <script src="notas.js"></script>
+
+    <section id="notas-matematicas" class="notas-materia">
+        <h2>Notas de Matemáticas</h2>
+        <table>
+            <tr><th>1er Parcial</th><td>62</td></tr>
+            <tr><th>2do Parcial</th><td>34</td></tr>
+            <tr><th>Nota del Ingeniero</th><td>45</td></tr>
+            <tr><th>Nota Final</th><td><strong>48</strong></td></tr>
+        </table>
+        <button onclick="volverAlMenu()">Volver</button>
+    </section>
+
+    <section id="notas-fisica" class="notas-materia">
+        <h2>Notas de Física</h2>
+        <table>
+            <tr><th>1er Parcial</th><td>82</td></tr>
+            <tr><th>2do Parcial</th><td>90</td></tr>
+            <tr><th>Nota del Ingeniero</th><td>80</td></tr>
+            <tr><th>Nota Final</th><td><strong>86</strong></td></tr>
+        </table>
+        <button onclick="volverAlMenu()">Volver</button>
+    </section>
+
+    <section id="notas-quimica" class="notas-materia">
+        <h2>Notas de Química</h2>
+        <table>
+            <tr><th>1er Parcial</th><td>57</td></tr>
+            <tr><th>2do Parcial</th><td>85</td></tr>
+            <tr><th>Nota del Ingeniero</th><td>88</td></tr>
+            <tr><th>Nota Final</th><td><strong>74</strong></td></tr>
+        </table>
+        <button onclick="volverAlMenu()">Volver</button>
+    </section>
+
+    <script>
+        function mostrarMateria(materia) {
+            document.getElementById('menu-materias').style.display = 'none';
+            document.querySelectorAll('.notas-materia').forEach(div => div.style.display = 'none');
+            document.getElementById('notas-' + materia).style.display = 'block';
+        }
+        function volverAlMenu() {
+            document.querySelectorAll('.notas-materia').forEach(div => div.style.display = 'none');
+            document.getElementById('menu-materias').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
