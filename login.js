@@ -3,7 +3,7 @@ const loginScreen = document.getElementById('login-screen');
 
 // Credenciales
 const validCarnet = "14041802";
-const validPreu = "198225";
+const validPreu = "221783";
 
 // Evento de Login
 document.getElementById('login-button').addEventListener('click', () => {
