@@ -1,113 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CPF Ingeniería - Notas</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color: #f2f2f2;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        h1 img {
-            height: 40px;
-            vertical-align: middle;
-        }
-        .user-info {
-            text-align: right;
-        }
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #006400;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        section {
-            margin-top: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td {
-            border: 1px solid #999;
-            padding: 10px;
-            text-align: center;
-        }
-        .notas-materia {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notas - Ingeniería</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f4f8;
+    }
+
+    h1 {
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+    }
+
+    h1 img {
+      height: 40px;
+      width: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .salir {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .salir img {
+      height: 40px;
+      width: auto;
+    }
+
+    .materia {
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin: 15px 0;
+      padding: 10px 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    summary {
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .nota {
+      padding-left: 15px;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1><img src="ingenieria-icon.png" alt="Ingeniería Icono"> INGENIERÍA</h1>
-        <div class="user-info">
-            <span onclick="window.location.href='datos.html'">Efrain Davis Villegas Arrazola</span><br>
-            <button onclick="window.location.href='datos.html'"><img src="salir-icon.png" alt="Salir Icono"> Regresar</button>
-        </div>
-    </header>
 
-    <section id="menu-materias">
-        <h2>Ver notas de:</h2>
-        <button onclick="mostrarMateria('matematicas')">Matemáticas</button>
-        <button onclick="mostrarMateria('fisica')">Física</button>
-        <button onclick="mostrarMateria('quimica')">Química</button>
-    </section>
+  <div class="salir">
+    <img src="salir-icon.png" alt="Salir">
+  </div>
 
-    <section id="notas-matematicas" class="notas-materia">
-        <h2>Notas de Matemáticas</h2>
-        <table>
-            <tr><th>1er Parcial</th><td>62</td></tr>
-            <tr><th>2do Parcial</th><td>34</td></tr>
-            <tr><th>Nota del Ingeniero</th><td>45</td></tr>
-            <tr><th>Nota Final</th><td><strong>48</strong></td></tr>
-        </table>
-        <button onclick="volverAlMenu()">Volver</button>
-    </section>
+  <h1><img src="ingenieria-icon.png" alt="Icono"> INGENIERÍA</h1>
 
-    <section id="notas-fisica" class="notas-materia">
-        <h2>Notas de Física</h2>
-        <table>
-            <tr><th>1er Parcial</th><td>82</td></tr>
-            <tr><th>2do Parcial</th><td>90</td></tr>
-            <tr><th>Nota del Ingeniero</th><td>80</td></tr>
-            <tr><th>Nota Final</th><td><strong>86</strong></td></tr>
-        </table>
-        <button onclick="volverAlMenu()">Volver</button>
-    </section>
+  <div class="materia">
+    <details>
+      <summary>Ver nota de Matemática</summary>
+      <div class="nota">Nota: 78.5</div>
+    </details>
+  </div>
 
-    <section id="notas-quimica" class="notas-materia">
-        <h2>Notas de Química</h2>
-        <table>
-            <tr><th>1er Parcial</th><td>57</td></tr>
-            <tr><th>2do Parcial</th><td>85</td></tr>
-            <tr><th>Nota del Ingeniero</th><td>88</td></tr>
-            <tr><th>Nota Final</th><td><strong>74</strong></td></tr>
-        </table>
-        <button onclick="volverAlMenu()">Volver</button>
-    </section>
+  <div class="materia">
+    <details>
+      <summary>Ver nota de Física</summary>
+      <div class="nota">Nota: 84.2</div>
+    </details>
+  </div>
 
-    <script>
-        function mostrarMateria(materia) {
-            document.getElementById('menu-materias').style.display = 'none';
-            document.querySelectorAll('.notas-materia').forEach(div => div.style.display = 'none');
-            document.getElementById('notas-' + materia).style.display = 'block';
-        }
-        function volverAlMenu() {
-            document.querySelectorAll('.notas-materia').forEach(div => div.style.display = 'none');
-            document.getElementById('menu-materias').style.display = 'block';
-        }
-    </script>
+  <div class="materia">
+    <details>
+      <summary>Ver nota de Química</summary>
+      <div class="nota">Nota: 91.7</div>
+    </details>
+  </div>
+
 </body>
 </html>
