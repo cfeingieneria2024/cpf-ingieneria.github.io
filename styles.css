@@ -187,6 +187,10 @@ th {
     background-color: #00796b;
     color: white;
 }
+h1 img {
+    height: 40px;
+    vertical-align: middle;
+}
 
 td {
     background-color: #ffffff;
