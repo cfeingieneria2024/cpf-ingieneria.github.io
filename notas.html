@@ -4,14 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Notas - Ingeniería</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f0f4f8;
-    }
-
     h1 {
       color: #2c3e50;
       display: flex;
@@ -20,7 +14,6 @@
 
     h1 img {
       height: 40px;
-      width: auto;
       margin-right: 10px;
       vertical-align: middle;
     }
@@ -33,7 +26,6 @@
 
     .salir img {
       height: 40px;
-      width: auto;
     }
 
     .materia {
@@ -60,29 +52,29 @@
 <body>
 
   <div class="salir">
-    <img src="salir-icon.png" alt="Salir">
+    <a href="index.html"><img src="salir-icon.png" alt="Salir"></a>
   </div>
 
   <h1><img src="ingenieria-icon.png" alt="Icono"> INGENIERÍA</h1>
 
   <div class="materia">
     <details>
-      <summary>Ver nota de Matemática</summary>
-      <div class="nota">Nota: 78.5</div>
+      <summary>Ver nota de Matemáticas</summary>
+      <div class="nota">Primer parcial: 62<br>Segundo parcial: 34<br>Nota del ingeniero: 40<br><strong>Nota final: 48</strong></div>
     </details>
   </div>
 
   <div class="materia">
     <details>
       <summary>Ver nota de Física</summary>
-      <div class="nota">Nota: 84.2</div>
+      <div class="nota">Primer parcial: 57<br>Segundo parcial: 85<br>Nota del ingeniero: 90<br><strong>Nota final: 74</strong></div>
     </details>
   </div>
 
   <div class="materia">
     <details>
       <summary>Ver nota de Química</summary>
-      <div class="nota">Nota: 91.7</div>
+      <div class="nota">Primer parcial: 82<br>Segundo parcial: 90<br>Nota del ingeniero: 96<br><strong>Nota final: 88</strong></div>
     </details>
   </div>
 
